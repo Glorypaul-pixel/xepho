@@ -34,7 +34,7 @@ body {
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav a {
@@ -44,7 +44,10 @@ body {
 }
 
 .nav a:hover {
-  border: 1px solid grey;
+  border: none;
+  background-color: cadetblue;
+  padding:0 1rem;
+  border-radius: 2rem;
 }
 .navbar {
   display: flex;
@@ -65,7 +68,7 @@ body {
   background-color: #005459;
   border: 2px solid white;
 }
-
+/* EFFORT DETAILS */
 .effort-details {
   /* background-color: #005459; */
   color: #fff;
@@ -107,13 +110,8 @@ body {
 
 .effort-details input {
   text-align: center;
-  background: linear-gradient(
-    95.55deg,
-    #1d1d21 18.01%,
-    rgba(29, 29, 33, 0.17) 52.48%,
-    rgba(29, 29, 33, 0.96875) 92.15%
-  );
-  color: #fff;
+  background: white;
+  color: #302a2a;
   padding: 1rem 2rem;
   width: 25%;
   border-radius: 2rem;
@@ -177,7 +175,7 @@ body {
 .feature {
   color: white;
   padding: 0 4rem;
-  padding-top: 14rem;
+  padding-top: 4rem;
   font-family: "VisbyBold", sans-serif;
 }
 .feature h2 {
@@ -216,6 +214,7 @@ body {
 .feature-box-text {
   flex: 1;
   font-family: "VisbyBold", sans-serif;
+  padding: 4rem;
 }
 
 .feature-box-text h3 {
@@ -411,10 +410,35 @@ body {
   justify-content: center;
   gap: 1rem;
   padding-bottom: 6rem;
+  /* width: 30%; */
 }
 
 .integration .shapes img {
-  max-width: 100%;
+  /* Set desired width */
+  height: 150px; /* Set desired height */
+  border-radius: 8px;
+}
+/* Wrapper to contain scrolling */
+.wrapper {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Style for the shapes container */
+.shapes {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 10s linear infinite;
+  width: max-content;
+}
+
+/* Image styling */
+.shapes img {
+  /* width: 100px; */
+  height: 100px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -620,25 +644,258 @@ footer .footBtn button {
   color: #fff;
   padding: 1rem 2rem;
 }
-
+/* Animation for scrolling effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* Responsive Design */
-@media (max-width: 768px) {
-  .pricing {
+@media (max-width: 900px) {
+  .header {
     flex-direction: column;
-    align-items: center;
+    padding: 1rem;
+    align-items: flex-start;
   }
 
-  .pricing > div {
-    max-width: 90%;
+  .logo {
+    font-size: 2rem;
     margin-bottom: 1rem;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .navbar.active .nav {
+    display: flex;
+  }
+
+  /* EFFORT */
+  .effort-details {
+    padding: 1rem;
+  }
+  .effort-details h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .effort-details .main-details {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 2rem 0;
+  }
+  .xepho {
+    padding: 1rem;
+  }
+
+  .xepho h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .xepho p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  .feature {
+    padding: 1rem;
+    padding-top: 2rem;
+  }
+  .feature h2 {
+    font-size: 25px;
+    line-height: 36px;
+    padding: 1rem 0;
+  }
+  .feature-details {
+    flex-direction: column;
+  }
+  .feature-get-started {
+    flex-direction: column;
+    padding: 1rem;
+    font-family: "VisbyBold", sans-serif;
+  }
+
+  .feature-box-text {
+    flex: 1;
+    font-family: "VisbyBold", sans-serif;
+  }
+
+  .feature-box-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-family: "VisbyBold", sans-serif;
+  }
+
+  .feature-box-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .feature-box-text button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .feature-box-bg {
+    display: none;
+  }
+  .integration {
+    padding: 1rem;
+  }
+
+  .integration h5 {
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 1rem;
+  }
+  .integration h3 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .integration p {
+    font-family: "Visby", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  .integration .shapes {
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .integration .shapes img {
+    max-width: 20%;
+    border-radius: 8px;
   }
   .testimonial {
     flex-direction: column;
-    text-align: center;
+    padding: 1rem;
   }
 
   .testimonial-text {
+    flex: 1;
     padding-right: 0;
+  }
+
+  .testimonial h5 {
+    font-size: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .testimonial h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial p {
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+  }
+
+  .testimonial-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .course-creation {
+    padding-top: 1rem;
+  }
+  .btnCourse {
+    margin: 1rem auto;
+  }
+  .course-creation h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    padding-bottom: 1rem;
+  }
+  .course-creation p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .course-creation .trial {
+    padding: 1rem;
+  }
+  .course-creation .sales {
+    padding: 1rem;
+  }
+  footer {
+    padding: 1rem;
+  }
+  footer h3 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+  footer ul {
+    width: 100%;
+    padding: 1rem 0 0;
+    justify-content: space-between;
+  }
+  footer ul li {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer .footBtn button {
+    font-size: 14px;
+    padding: 1rem;
+  }
+
+  footer h1 {
+    font-size: 60px;
+    line-height: 64px;
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    width: 100%;
   }
 }

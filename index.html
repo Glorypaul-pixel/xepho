@@ -20,15 +20,16 @@
     <header class="header">
       <div class="navbar">
         <div class="logo"><img src="./images/XephoLogo.png" alt="" /></div>
+
+        <div class="hamburger" onclick="toggleMenu()"></div>
         <nav class="nav">
           <a href="#about">About</a>
-          <a href="#features">Features</a>
+          <a href="#feature">Feature</a>
           <a href="#pricing">Pricing</a>
-          <a href="#sight">Sight</a>
+          <a href="#insight">Insight</a>
         </nav>
       </div>
-
-      <button class="contact-btn">Contact Sales</button>
+      <a href="#contact" class="contact-btn">Contact Us</a>
     </header>
     <main>
       <div class="effort-details">
@@ -55,7 +56,7 @@
         </div>
       </div>
 
-      <div class="xepho">
+      <div class="xepho" id="about">
         <h5 class="underlined">Xepho's User</h5>
         <h2>
           Xepho is built to help educators, professionals and organizations
@@ -69,7 +70,7 @@
           grow.
         </p>
       </div>
-      <div class="feature">
+      <div class="feature" id="feature">
         <h5 class="underlined">Features</h5>
         <div class="feature-details">
           <h2>
@@ -93,12 +94,14 @@
               It works from your phone or laptop, and includes engaging features
               like Q&As, live captions and scheduling.
             </p>
-            <button type="submit">Get Started</button>
+            <a href="">
+              <button type="submit">Register here</button>
+            </a>
           </div>
-          <div class="feature-box-bg"></div>
+          <!-- <div class="feature-box-bg"></div> -->
         </div>
       </div>
-      <div class="pricing">
+      <div class="pricing" id="pricing">
         <div class="price1">
           <h3>Bring Teams together</h3>
           <button type="submit">Pricing</button>
@@ -121,7 +124,7 @@
           </div>
         </div>
       </div>
-      <div class="integration">
+      <div class="integration" id="insight">
         <h5 class="underlined">Integration</h5>
         <h3>
           Our Platforms is integrated with top technology <br />
@@ -132,12 +135,45 @@
           since it supports more the <br />
           use of other platform.
         </p>
-        <div class="shapes">
-          <img src="./images/card3.png" alt="" />
-          <img src="./images/card2.png" alt="" />
-          <img src="./images/card.png" alt="" />
-          <img src="./images/card.png" alt="" />
-          <img src="./images/card1.png" alt="" />
+        <div class="wrapper">
+          <div class="shapes">
+            <img
+              class="paypal"
+              src="./images/Paypallogoreal.png"
+              alt="PayPal Logo"
+            />
+            <img
+              class="stripe"
+              src="/images/stripelogo.png"
+              alt="Stripe Logo"
+            />
+            <img class="vimoe" src="./images/logoVimoe.png" alt="Vimeo Logo" />
+            <img
+              class="youtube"
+              src="./images/YouTube-Logo.png"
+              alt="YouTube Logo"
+            />
+            <img class="zoom" src="./images/Zoom.png" alt="Zoom Logo" />
+          </div>
+          <div class="shapes">
+            <img
+              class="paypal"
+              src="./images/Paypallogoreal.png"
+              alt="PayPal Logo"
+            />
+            <img
+              class="stripe"
+              src="/images/stripelogo.png"
+              alt="Stripe Logo"
+            />
+            <img class="vimoe" src="./images/logoVimoe.png" alt="Vimeo Logo" />
+            <img
+              class="youtube"
+              src="./images/YouTube-Logo.png"
+              alt="YouTube Logo"
+            />
+            <img class="zoom" src="./images/Zoom.png" alt="Zoom Logo" />
+          </div>
         </div>
       </div>
       <div class="testimonial">
@@ -178,7 +214,7 @@
         <img src="./images/complete.png" alt="" />
       </div>
     </main>
-    <footer>
+    <footer id="contact">
       <h3>
         Are you interested <br />
         with Xepho?
@@ -196,5 +232,12 @@
         <li><a href="">Github</a></li>
       </ul>
     </footer>
+    <script>
+      // Function to toggle the menu
+      function toggleMenu() {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
