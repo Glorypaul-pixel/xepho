@@ -994,8 +994,8 @@ footer .footBtn button {
   }
 
   .shapes img {
-    width: 80px;
-    height: 40px; /* Smaller image size */
+    width: 100%;
+    height: 10%; /* Smaller image size */
   }
 }
 
@@ -1016,13 +1016,17 @@ footer .footBtn button {
 
   /* Style for the shapes container */
   .shapes {
-    gap: 1rem;
-    animation: scroll 20s linear infinite; /* Even slower scroll speed */
+    display: flex; /* Ensure horizontal layout */
+    gap: 3rem;
+    animation: scroll 20s linear infinite; /* Slow scroll speed */
   }
-
+#shapes {
+  gap: 2rem;
+}
   .shapes img {
-    width: 100%;
-    height: 10px; /* Even smaller image size */
+    width: 60px; /* Fixed width for each image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
   }
 }
 .nav.active {
