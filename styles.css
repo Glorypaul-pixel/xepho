@@ -15,7 +15,11 @@ body {
   font-family: "VisbyBold", sans-serif;
   background-color: #005459;
 }
-
+a {
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+}
 .header {
   display: flex;
   align-items: center;
@@ -31,7 +35,32 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
 }
+/* nav */
+.header {
+  position: relative;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+/*  */
 .nav {
   display: flex;
   gap: 2rem;
@@ -46,7 +75,7 @@ body {
 .nav a:hover {
   border: none;
   background-color: cadetblue;
-  padding:0 1rem;
+  padding: 0 1rem;
   border-radius: 2rem;
 }
 .navbar {
@@ -54,6 +83,9 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 40%;
+}
+.hamburger {
+  display: none;
 }
 .contact-btn {
   background-color: #1c797e;
@@ -329,12 +361,19 @@ body {
   max-width: 100%;
 
   margin-bottom: 0;
-  display: block;
-  object-fit: cover;
+  /* display: block; */
+  /* object-fit: cover; */
 }
 
+.image2 img {
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  /* position: relative; */
+}
 .image,
-.image3 {
+.image3,
+.image2 {
   padding: 0;
   margin: 0;
   position: relative;
@@ -412,33 +451,41 @@ body {
   padding-bottom: 6rem;
   /* width: 30%; */
 }
-
-.integration .shapes img {
-  /* Set desired width */
-  height: 150px; /* Set desired height */
-  border-radius: 8px;
+button {
+  cursor: pointer;
 }
+/* .integration .shapes img {
+  /* Set desired width */
+/* height: 150px; Set desired height */
+/* border-radius: 8px; */
+/* } */
 /* Wrapper to contain scrolling */
 .wrapper {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
+  gap: 2rem;
 }
 
 /* Style for the shapes container */
 .shapes {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   animation: scroll 10s linear infinite;
   width: max-content;
 }
 
+#shapes {
+  gap: 2rem;
+}
 /* Image styling */
 .shapes img {
   /* width: 100px; */
   height: 100px;
-  object-fit: cover;
+  object-fit: contain;
+  gap: 10rem;
+
   border-radius: 8px;
 }
 
@@ -556,6 +603,10 @@ body {
 .btnCourse {
   margin: 2rem auto;
 }
+.btnCourse button:hover,
+.footBtn button:hover {
+  background-color: cadetblue;
+}
 .course-creation h1 {
   font-family: "Manrope", sans-serif;
   font-size: 72px;
@@ -655,15 +706,40 @@ footer .footBtn button {
 }
 /* Responsive Design */
 @media (max-width: 900px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: #005459;
+    background-color: white;
+    padding: 1rem;
+  }
+
+  .nav a {
+    color: #005459;
+    padding: 0.5rem 0;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  /* 
+   */
   .header {
     flex-direction: column;
     padding: 1rem;
-    align-items: flex-start;
   }
 
   .logo {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
 
   .nav {
@@ -684,16 +760,19 @@ footer .footBtn button {
     cursor: pointer;
     font-size: 2rem;
     color: white;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar.active .nav {
     display: flex;
+    align-items: center;
   }
 
   /* EFFORT */
-  .effort-details {
+  /* .effort-details {
     padding: 1rem;
-  }
+  } */
   .effort-details h1 {
     font-size: 30px;
     font-weight: 500;
@@ -706,6 +785,17 @@ footer .footBtn button {
     font-size: 12px;
     line-height: 18px;
     padding: 2rem 0;
+  }
+  .effort-details input {
+    text-align: start;
+    padding: 0.6rem;
+    width: 60%;
+    font-size: 12px;
+  }
+  .effort-details button {
+    padding: 0.6rem;
+    font-size: 12px;
+    margin-left: 1rem;
   }
   .xepho {
     padding: 1rem;
@@ -740,6 +830,8 @@ footer .footBtn button {
 
   .feature-box-text {
     flex: 1;
+    padding: 1rem;
+    text-align: center;
     font-family: "VisbyBold", sans-serif;
   }
 
@@ -791,16 +883,16 @@ footer .footBtn button {
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-  .integration .shapes {
+  /* .integration .shapes {
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     padding-bottom: 2rem;
   }
 
   .integration .shapes img {
-    max-width: 20%;
+    max-width: 50%;
     border-radius: 8px;
-  }
+  } */
   .testimonial {
     flex-direction: column;
     padding: 1rem;
@@ -888,6 +980,23 @@ footer .footBtn button {
     line-height: 64px;
     padding-top: 5rem;
   }
+
+  .wrapper {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .shapes {
+    gap: 0.75rem;
+    animation: scroll 15s linear infinite; /* Slower scroll speed */
+  }
+
+  .shapes img {
+    width: 80px;
+    height: 40px; /* Smaller image size */
+  }
 }
 
 @media (max-width: 480px) {
@@ -898,4 +1007,24 @@ footer .footBtn button {
   .navbar {
     width: 100%;
   }
+  .wrapper {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  /* Style for the shapes container */
+  .shapes {
+    gap: 1rem;
+    animation: scroll 20s linear infinite; /* Even slower scroll speed */
+  }
+
+  .shapes img {
+    width: 100%;
+    height: 10px; /* Even smaller image size */
+  }
+}
+.nav.active {
+  display: flex;
 }

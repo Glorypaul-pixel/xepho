@@ -19,9 +19,13 @@
   <body>
     <header class="header">
       <div class="navbar">
-        <div class="logo"><img src="./images/XephoLogo.png" alt="" /></div>
-
-        <div class="hamburger" onclick="toggleMenu()"></div>
+        <div class="logo">
+          <img src="./images/XephoLogo.png" alt="Xepho Logo" />
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <!-- Hamburger icon -->
+          <span>&#9776;</span>
+        </div>
         <nav class="nav">
           <a href="#about">About</a>
           <a href="#feature">Feature</a>
@@ -31,6 +35,7 @@
       </div>
       <a href="#contact" class="contact-btn">Contact Us</a>
     </header>
+
     <main>
       <div class="effort-details">
         <h1>
@@ -47,7 +52,7 @@
         </p>
         <div class="btn">
           <input type="email" id="email" placeholder="Email address" />
-          <button type="submit">Start your free trial</button>
+          <button type="submit">Register Here</button>
         </div>
         <div class="homepageImg">
           <div class="Bgimg">
@@ -118,7 +123,9 @@
         </div>
         <div class="price3">
           <h3>Share SCORM content with ease</h3>
-          <button type="submit">Get started</button>
+          <a href="">
+            <button type="submit">Pricing</button>
+          </a>
           <div class="image3">
             <img src="./images/chat3.png" alt="" />
           </div>
@@ -155,7 +162,7 @@
             />
             <img class="zoom" src="./images/Zoom.png" alt="Zoom Logo" />
           </div>
-          <div class="shapes">
+          <div class="shapes" id="shapes">
             <img
               class="paypal"
               src="./images/Paypallogoreal.png"
@@ -207,8 +214,12 @@
           today, and watch your ideas emerge and thrive.
         </p>
         <div class="btnCourse">
-          <button class="trial" type="submit">Start your free trial</button>
-          <button class="sales" type="submit">Contact Sales</button>
+          <a href="">
+            <button class="trial" type="submit">Register Here</button>
+          </a>
+          <a href="">
+            <button class="sales" type="submit">Contact Sales</button>
+          </a>
         </div>
 
         <img src="./images/complete.png" alt="" />
@@ -220,7 +231,9 @@
         with Xepho?
       </h3>
       <div class="footBtn">
-        <button type="submit">Start Free Trial</button>
+        <a href="">
+          <button type="submit">Start Registration</button>
+        </a>
       </div>
       <h1>Xepho.</h1>
       <hr />
@@ -233,10 +246,13 @@
       </ul>
     </footer>
     <script>
-      // Function to toggle the menu
+   
       function toggleMenu() {
-        const navbar = document.querySelector(".navbar");
-        navbar.classList.toggle("active");
+        const nav = document.querySelector(".nav");
+        const contactBtn = document.querySelector(".contact-btn");
+
+        nav.classList.toggle("active"); // Toggle nav visibility
+        contactBtn.classList.toggle("active"); // Toggle contact button visibility
       }
     </script>
   </body>
